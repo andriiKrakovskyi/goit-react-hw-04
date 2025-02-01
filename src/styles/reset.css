@@ -130,7 +130,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
+  content: '';
   content: none;
 }
 
@@ -155,6 +155,11 @@ input:focus,
 button:focus,
 select:focus,
 textarea:focus {
+  outline: none;
+}
+
+img:focus,
+img:hover {
   outline: none;
 }
 

@@ -1,6 +1,33 @@
 @media only screen and (min-width: 768px) {
-  .searchBar_section {
-    padding-top: 20px;
-    padding-bottom: 20px;
+  .searchBar_container {
+    padding: 0;
+  }
+
+  .searchBar_header {
+    background-color: blue;
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+
+  .searchBar_form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .searchBar_input {
+    background-color: white;
+    border-radius: 3px;
+    font-size: 20px;
+    padding: 5px 50px 5px 15px;
+    width: 350px;
+  }
+
+  .searchBar_button {
+    background-color: rgb(228, 228, 228);
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 20px;
   }
 }

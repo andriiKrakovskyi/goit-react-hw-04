@@ -1,18 +1,17 @@
 import s from './ImageGallery.module.css';
 import Container from '../Container/Container.jsx';
-// import ImageCard from './components/ImageCard/ImageCard';
+import ImageCard from '../ImageCard/ImageCard.jsx';
 
-export default function ImageGallery() {
+export default function ImageGallery({ photos }) {
   return (
     <section className={s.imageGallery_section}>
       <Container className={s.imageGallery_container}>
-        <ul>
-          {/* Набір елементів списку із зображеннями */}
-          <li>
-            <div>
-              <img src="" alt="" />
-            </div>
-          </li>
+        <ul className={s.imageGallery_list}>
+          {photos.map((item) => (
+            <li className={s.imageGallery_item} key={item.id}>
+              <ImageCard item={item} />
+            </li>
+          ))}
         </ul>
       </Container>
     </section>
