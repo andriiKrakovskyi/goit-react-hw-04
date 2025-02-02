@@ -1,23 +1,21 @@
 import s from './SearchBar.module.css';
 import Container from '../Container/Container.jsx';
 import toast from 'react-hot-toast';
-import { useState } from 'react';
 
-export default function SearchBar({ onSubmit }) {
-  const [inputValue, setInputValue] = useState('');
-
+export default function SearchBar({ onSubmit, disabled }) {
   const handleSubmit = (evt) => {
     evt.preventDefault();
 
-    if (inputValue.trim() === '') {
+    const form = evt.target;
+    const input = form.elements.inputSearchBar;
+    const inputValue = input.value.trim();
+
+    if (!inputValue) {
       toast.error('Please enter a search term');
       return;
     }
-    onSubmit(inputValue);
-  };
 
-  const handleChange = (evt) => {
-    setInputValue(evt.target.value);
+    onSubmit(inputValue);
   };
 
   return (
@@ -29,9 +27,7 @@ export default function SearchBar({ onSubmit }) {
               <span className="visually_hidden">Search for images</span>
               <input
                 className={s.searchBar_input}
-                // onChange={(evt) => setInputValue(evt.target.value)}
-                onChange={handleChange}
-                value={inputValue}
+                name="inputSearchBar"
                 type="text"
                 autoComplete="off"
                 autoFocus
@@ -41,7 +37,8 @@ export default function SearchBar({ onSubmit }) {
             </label>
             <button
               className={s.searchBar_button}
-              aria-label={` Search button`}
+              disabled={disabled}
+              aria-label="Search button"
               type="submit"
             >
               Search
