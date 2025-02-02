@@ -1,7 +1,4 @@
 @media only screen and (min-width: 768px) {
-  .imageModal_wrapper {
-  }
-
   .imageModal_img {
     max-width: 100%;
     max-height: 80vh;
@@ -25,15 +22,19 @@
   }
 
   .imageModal_value,
-  .imageModal_quantity,
-  .imageModal_quantity_description {
+  .imageModal_quantity {
     font-size: 20px;
     font-weight: bold;
     color: rgb(60, 82, 82);
   }
 
-  .imageModal_quantity,
-  .imageModal_quantity_description {
+  .imageModal_quantity {
     font-size: 17px;
+  }
+
+  .imageModal_value_wrapper {
+    display: flex;
+    gap: 5px;
+    align-items: center;
   }
 }
