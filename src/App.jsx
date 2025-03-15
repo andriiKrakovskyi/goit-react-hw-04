@@ -53,12 +53,14 @@ function App() {
     };
     getData();
   }, [query, page]);
+
   const handleSetQuery = (newQuery) => {
     if (newQuery === query) return;
     setQuery(newQuery);
     setPhotos([]);
     setPage(1);
   };
+
   const handleLoadMore = () => {
     setPage((prev) => prev + 1);
   };
